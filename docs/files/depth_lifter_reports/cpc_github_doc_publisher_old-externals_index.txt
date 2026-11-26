@@ -1,0 +1,83 @@
+source_file = cpc_github_doc_publisher_old.py
+source_modified = 2026-11-20 10:25:38
+import   origin   line;  indented: external name   xN calls   called by (def paths)
+
+import html    standard library    line 76
+        html.escape    x16    called by article_nav, html_page, markdown_to_html, markdown_to_html.inline, markdown_to_html.inline.link, markdown_to_html.inline.picture, publish_source_file, render_catalogue, rewrite_md_links.change
+        html.unescape    x5    called by file_description, file_title, markdown_to_html.inline.picture, markdown_to_html.safe, rewrite_md_links.change
+import http.server    standard library    line 77
+        http.server.ThreadingHTTPServer    x1    called by PublisherApp.test_web
+import json    standard library    line 78
+        json.dumps    x3    called by publish_github_pages, PublisherApp.close_app, PublisherApp.save_config_only
+        json.loads    x2    called by load_state, publish_github_pages
+import os    standard library    line 79
+        os.path.relpath    x1    called by build_web_site
+        os.startfile    x1    called by PublisherApp.open_web_folder
+        os.walk    x1    called by copy_article_files
+import queue    standard library    line 80
+        queue.Queue    x1    called by PublisherApp.__init__
+import re    standard library    line 81
+        re.fullmatch    x2    called by publish_github_pages
+        re.match    x5    called by markdown_to_html, markdown_to_html.safe, rewrite_md_links.change
+        re.search    x7    called by append_nav, file_description, file_title, publish_source_file
+        re.sub    x11    called by file_title, markdown_to_html.inline, publish_source_file, rewrite_md_links, rewrite_md_links.change
+import shutil    standard library    line 82
+        shutil.copy2    x3    called by build_web_site, copy_article_files, publish_github_pages
+        shutil.move    x1    called by build_web_site
+        shutil.rmtree    x1    called by build_web_site
+        shutil.which    x2    called by publish_github_pages
+import subprocess    standard library    line 83
+        subprocess.run    x3    called by publish_github_pages, run_cmd
+import sys    standard library    line 84
+        sys.path.insert    x1    called by (module level)
+import tempfile    standard library    line 85
+        tempfile.TemporaryDirectory    x2    called by build_web_site, publish_github_pages
+import threading    standard library    line 86
+        threading.Thread    x2    called by PublisherApp.test_web, PublisherApp.worker
+import webbrowser    standard library    line 87
+        webbrowser.open    x3    called by PublisherApp.open_published, PublisherApp.open_web_folder, PublisherApp.test_web
+from functools import partial    standard library    line 88    CAUTION: source file not named at the call
+        partial    x2    called by PublisherApp._build_config, PublisherApp.test_web
+from pathlib import Path    standard library    line 89    CAUTION: source file not named at the call
+        Path    x17    called by build_web_site, copy_article_files, file_description, file_title, load_state, publish_github_pages, PublisherApp.__init__, PublisherApp.web_folder, scan_articles, select_asset, valid_output_directory
+        Path.home    x1    called by valid_output_directory
+from urllib.parse import quote    standard library    line 90    CAUTION: source file not named at the call
+        quote    x6    called by article_nav, pages_url, render_catalogue
+import tkinter as tk    standard library    line 96
+        tk.StringVar    x5    called by PublisherApp._build_config, PublisherApp._build_github, PublisherApp._build_preview, PublisherApp._build_sources, PublisherApp._build_ui
+from tkinter import filedialog    standard library    line 97    CAUTION: source file not named at the call
+        filedialog.askdirectory    x1    called by PublisherApp._browse_config
+        filedialog.askopenfilename    x1    called by PublisherApp._browse_config
+from tkinter import messagebox    standard library    line 97    CAUTION: source file not named at the call
+        messagebox.askyesno    x1    called by PublisherApp.upload_github
+        messagebox.showerror    x5    called by PublisherApp.process_events, PublisherApp.save_config_only, PublisherApp.test_web, PublisherApp.upload_github
+        messagebox.showinfo    x1    called by PublisherApp.process_events
+from tkinter import scrolledtext    standard library    line 97    CAUTION: source file not named at the call
+        scrolledtext.ScrolledText    x2    called by PublisherApp._attach_notes, PublisherApp._build_ui
+from tkinter import ttk    standard library    line 97    CAUTION: source file not named at the call
+        ttk.Button    x8    called by PublisherApp._build_config, PublisherApp._build_github, PublisherApp._build_preview, PublisherApp._build_sources
+        ttk.Entry    x1    called by PublisherApp._build_config
+        ttk.Frame    x6    called by PublisherApp._attach_notes, PublisherApp._build_config, PublisherApp._build_github, PublisherApp._build_preview, PublisherApp._build_sources, PublisherApp._build_ui
+        ttk.Label    x11    called by PublisherApp._build_config, PublisherApp._build_github, PublisherApp._build_preview, PublisherApp._build_sources, PublisherApp._build_ui, PublisherApp._build_ui_choices
+        ttk.Notebook    x1    called by PublisherApp._build_ui
+        ttk.Treeview    x1    called by PublisherApp._build_sources
+import cpc_treeviews    third party or your own file    line 604
+        cpc_treeviews.build_treeview    x1    called by PublisherApp._build_sources
+import cc_treeviews    third party or your own file    line 608
+        cc_treeviews.build_treeview    x1    called by PublisherApp._build_sources
+import cpc_ui_choices    third party or your own file    line 667
+        cpc_ui_choices.attach    x1    called by PublisherApp._build_ui_choices
+import cpc_notes    third party or your own file    line 676
+        cpc_notes.attach    x1    called by PublisherApp._attach_notes
+
+Unknown source (not imported or defined in this file)
+    unknown, not imported or defined here
+        blocks.append    x2    called by markdown_to_html.flush
+        inline    x2    called by markdown_to_html.flush
+        list_items.clear    x1    called by markdown_to_html.flush
+        m.group    x2    called by markdown_to_html.inline, publish_source_file
+        paragraph.clear    x1    called by markdown_to_html.flush
+        safe    x2    called by markdown_to_html.inline.link, markdown_to_html.inline.picture
+        task    x1    called by PublisherApp.worker.run
+        tokens.append    x1    called by markdown_to_html.inline.code
+        x.name.casefold    x1    called by scan_articles

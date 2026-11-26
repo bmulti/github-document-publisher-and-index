@@ -1,0 +1,910 @@
+source_file = cpc_github_doc_publisher.py
+source_modified = 2026-11-20 09:41:56
+function()    first line;  -> what it calls    (where that comes from)    xN = times
+
+append_nav()    706
+    -> match.start    (local variable or parameter)    x2
+    -> re.search    (import re)
+article_nav()    694
+    -> ''.join    (method or call on an expression)
+    -> file_title    (this file, line 197)
+    -> html.escape    (import html)
+    -> p.suffix.lower    (local variable or parameter)
+    -> quote    (from urllib.parse import quote)
+build_web_site()    805
+    -> (dest / '.nojekyll').write_text    (method or call on an expression)
+    -> (index_dir / '.nojekyll').write_text    (method or call on an expression)
+    -> (index_dir / 'index.html').write_text    (method or call on an expression)
+    -> any    (builtin)
+    -> article['folder'].rglob    (method or call on an expression)
+    -> article['repo'].casefold    (method or call on an expression)    x2
+    -> article_nav    (this file, line 694)
+    -> built.append    (local variable or parameter)
+    -> config.get    (local variable or parameter)    x2
+    -> copy_article_files    (this file, line 736)
+    -> copy_index_files    (this file, line 786)
+    -> dest.mkdir    (local variable or parameter)
+    -> index_dir.mkdir    (local variable or parameter)
+    -> index_page.read_text    (local variable or parameter)
+    -> INDEX_REPOSITORY.casefold    (unknown, not imported or defined here)
+    -> index_template    (this file, line 527)
+    -> len    (builtin)
+    -> log    (local variable or parameter)    x5
+    -> os.path.relpath    (import os)
+    -> os.path.relpath(dest / article['icon'],…    (method or call on an expression)
+    -> output.exists    (local variable or parameter)
+    -> output.is_dir    (local variable or parameter)
+    -> output.is_symlink    (local variable or parameter)
+    -> output.parent.mkdir    (local variable or parameter)
+    -> page.is_file    (local variable or parameter)
+    -> page.is_symlink    (local variable or parameter)
+    -> page.relative_to    (local variable or parameter)    x2
+    -> page.relative_to(article['folder']).wit…    (method or call on an expression)
+    -> page.suffix.lower    (local variable or parameter)    x2
+    -> page_template    (this file, line 499)
+    -> part.startswith    (local variable or parameter)
+    -> Path    (from pathlib import Path)    x2
+    -> Path(__file__).resolve    (method or call on an expression)
+    -> publish_source_file    (this file, line 713)    x3
+    -> render_index    (this file, line 754)
+    -> scan_articles    (this file, line 574)
+    -> shutil.move    (import shutil)
+    -> shutil.rmtree    (import shutil)
+    -> stage.mkdir    (local variable or parameter)
+    -> str    (builtin)    x5
+    -> tempfile.TemporaryDirectory    (import tempfile)
+    -> used.add    (local variable or parameter)
+    -> valid_output_directory    (this file, line 185)
+    -> ValueError    (builtin)    x3
+copy_article_files()    736
+    -> (Path(base) / x).is_symlink    (method or call on an expression)
+    -> name.startswith    (local variable or parameter)
+    -> os.walk    (import os)
+    -> Path    (from pathlib import Path)    x2
+    -> rel.as_posix    (local variable or parameter)
+    -> report.append    (local variable or parameter)
+    -> shutil.copy2    (import shutil)
+    -> src.is_symlink    (local variable or parameter)
+    -> src.relative_to    (local variable or parameter)
+    -> src.suffix.lower    (local variable or parameter)    x2
+    -> target.parent.mkdir    (local variable or parameter)
+    -> x.startswith    (local variable or parameter)
+copy_index_files()    786
+    -> d.startswith    (local variable or parameter)
+    -> is_repository_candidate    (this file, line 420)
+    -> name.startswith    (local variable or parameter)
+    -> os.walk    (import os)
+    -> Path    (from pathlib import Path)    x2
+    -> path.is_symlink    (local variable or parameter)
+    -> path.relative_to    (local variable or parameter)
+    -> path.suffix.lower    (local variable or parameter)
+    -> shutil.copy2    (import shutil)
+    -> target.parent.mkdir    (local variable or parameter)
+default_project()    273
+    -> slugify    (this file, line 262)
+default_state()    166
+    -> Path    (from pathlib import Path)
+    -> Path(__file__).resolve    (method or call on an expression)
+    -> str    (builtin)
+enable_directory()    450
+    -> (folder / n).is_file    (method or call on an expression)
+    -> default_project    (this file, line 273)
+    -> file_description    (this file, line 222)
+    -> file_title    (this file, line 197)
+    -> isinstance    (builtin)
+    -> json.loads    (import json)
+    -> next    (builtin)
+    -> part_a_file_inventory    (this file, line 402)
+    -> Path    (from pathlib import Path)
+    -> path.read_text    (local variable or parameter)
+    -> repo_name    (this file, line 245)
+    -> set_repository_enabled    (this file, line 345)
+    -> write_json    (this file, line 267)
+file_description()    222
+    -> html.unescape    (import html)
+    -> match.group    (local variable or parameter)
+    -> Path    (from pathlib import Path)    x2
+    -> Path(path).read_text    (method or call on an expression)
+    -> Path(path).suffix.lower    (method or call on an expression)
+    -> re.search    (import re)
+file_title()    197
+    -> html.unescape    (import html)
+    -> html.unescape(candidate).strip    (method or call on an expression)
+    -> match.group    (local variable or parameter)    x3
+    -> match.group(1).strip    (method or call on an expression)
+    -> match.group(1).strip().strip    (method or call on an expression)
+    -> Path    (from pathlib import Path)
+    -> path.name.lower    (local variable or parameter)
+    -> path.name.lower().startswith    (method or call on an expression)
+    -> path.parent.name.replace    (local variable or parameter)
+    -> path.parent.name.replace('_', ' ').repl…    (method or call on an expression)    x2
+    -> path.read_text    (local variable or parameter)
+    -> path.stem.replace    (local variable or parameter)    x2
+    -> path.stem.replace('_', ' ').replace    (method or call on an expression)
+    -> path.stem.replace('_', ' ').replace('-'…    (method or call on an expression)
+    -> path.stem.replace('_', ' ').title    (method or call on an expression)
+    -> path.suffix.lower    (local variable or parameter)
+    -> re.search    (import re)    x4
+    -> re.sub    (import re)    x2
+    -> re.sub('[*`_]', '', match.group(1)).str…    (method or call on an expression)
+git_env()    912
+    -> ('x-access-token:' + token).encode    (method or call on an expression)
+    -> base64.b64encode    (import base64)
+    -> base64.b64encode(('x-access-token:' + t…    (method or call on an expression)
+    -> str    (builtin)
+github_api()    891
+    -> exc.read    (local variable or parameter)
+    -> json.dumps    (import json)
+    -> json.dumps(data).encode    (method or call on an expression)
+    -> json.loads    (import json)
+    -> raw.decode    (local variable or parameter)
+    -> request.add_header    (local variable or parameter)    x5
+    -> response.read    (local variable or parameter)
+    -> urllib.request.Request    (import urllib.request)
+    -> urllib.request.urlopen    (import urllib.request)
+html_page()    699
+    -> html.escape    (import html)    x2
+index_template()    527
+    -> page.is_file    (local variable or parameter)
+    -> page_template    (this file, line 499)
+    -> Path    (from pathlib import Path)
+    -> read_root_record    (this file, line 513)
+is_repository_candidate()    420
+    -> (folder / name).is_file    (method or call on an expression)
+    -> any    (builtin)
+    -> Path    (from pathlib import Path)
+load_state()    175
+    -> default_state    (this file, line 166)
+    -> isinstance    (builtin)
+    -> json.loads    (import json)
+    -> Path    (from pathlib import Path)    x2
+    -> Path(path).is_file    (method or call on an expression)
+    -> Path(path).read_text    (method or call on an expression)
+    -> result.update    (local variable or parameter)
+    -> ValueError    (builtin)
+load_uploads()    312
+    -> default_project    (this file, line 273)
+    -> folder.is_dir    (local variable or parameter)
+    -> folder.is_symlink    (local variable or parameter)
+    -> isinstance    (builtin)    x2
+    -> item.name.casefold    (unknown, not imported or defined here)
+    -> json.loads    (import json)
+    -> loaded.get    (local variable or parameter)
+    -> Path    (from pathlib import Path)
+    -> path.is_file    (local variable or parameter)
+    -> path.read_text    (local variable or parameter)
+    -> project.get    (local variable or parameter)    x3
+    -> project.update    (local variable or parameter)
+    -> result.append    (local variable or parameter)
+    -> root.is_dir    (local variable or parameter)
+    -> root.iterdir    (local variable or parameter)
+    -> slugify    (this file, line 262)
+    -> sorted    (builtin)
+    -> str    (builtin)
+    -> ValueError    (builtin)
+markdown_to_html()    606
+    -> '\n'.join    (method or call on an expression)    x3
+    -> (bullet or number).group    (method or call on an expression)
+    -> blocks.append    (local variable or parameter)    x4
+    -> code_lines.append    (local variable or parameter)
+    -> flush    (local variable or parameter)    x7
+    -> heading.group    (local variable or parameter)    x2
+    -> html.escape    (import html)    x2
+    -> inline    (local variable or parameter)    x2
+    -> len    (builtin)
+    -> line.lstrip    (local variable or parameter)
+    -> line.startswith    (local variable or parameter)    x3
+    -> line.strip    (local variable or parameter)
+    -> list_items.append    (local variable or parameter)
+    -> paragraph.append    (local variable or parameter)
+    -> raw.rstrip    (local variable or parameter)
+    -> re.match    (import re)    x3
+    -> text.replace    (local variable or parameter)
+    -> text.replace('\r\n', '\n').split    (method or call on an expression)
+    flush()    633
+        -> ''.join    (method or call on an expression)
+        -> '<br>'.join    (method or call on an expression)
+        -> blocks.append    (unknown, not imported or defined here)    x2
+        -> inline    (unknown, not imported or defined here)    x2
+        -> list_items.clear    (unknown, not imported or defined here)
+        -> paragraph.clear    (unknown, not imported or defined here)
+    inline()    612
+        -> html.escape    (import html)
+        -> int    (builtin)
+        -> m.group    (unknown, not imported or defined here)
+        -> re.sub    (import re)    x6
+        code()    615
+            -> len    (builtin)
+            -> m.group    (local variable or parameter)
+            -> str    (builtin)
+            -> tokens.append    (unknown, not imported or defined here)
+        link()    622
+            -> html.escape    (import html)
+            -> m.group    (local variable or parameter)    x3
+            -> safe    (unknown, not imported or defined here)
+        picture()    619
+            -> html.escape    (import html)    x2
+            -> html.unescape    (import html)
+            -> m.group    (local variable or parameter)    x3
+            -> safe    (unknown, not imported or defined here)
+    safe()    608
+        -> html.unescape    (import html)
+        -> re.match    (import re)
+        -> url.startswith    (local variable or parameter)
+        -> url.strip    (local variable or parameter)
+page_template()    499
+    -> log    (local variable or parameter)
+    -> Path    (from pathlib import Path)    x2
+    -> path.is_file    (local variable or parameter)
+    -> project.get    (local variable or parameter)
+    -> settings.get    (local variable or parameter)
+    -> str    (builtin)    x2
+pages_url()    887
+    -> (owner + '.github.io').casefold    (method or call on an expression)
+    -> quote    (from urllib.parse import quote)
+    -> repository.casefold    (local variable or parameter)
+part_a_directories()    426
+    -> (folder / 'index.html').is_file    (method or call on an expression)
+    -> (folder / 'index.md').is_file    (method or call on an expression)
+    -> (folder / 'output.json').is_file    (method or call on an expression)
+    -> (folder / 'record.json').is_file    (method or call on an expression)
+    -> entry.is_dir    (local variable or parameter)
+    -> entry.name.startswith    (local variable or parameter)
+    -> os.scandir    (import os)
+    -> Path    (from pathlib import Path)    x2
+    -> result.append    (local variable or parameter)
+    -> root.is_dir    (local variable or parameter)
+    -> row['name'].casefold    (method or call on an expression)
+    -> sorted    (builtin)
+    -> str    (builtin)    x2
+    -> str(root or '').strip    (method or call on an expression)
+part_a_file_inventory()    402
+    -> entry.is_file    (local variable or parameter)
+    -> files.append    (local variable or parameter)
+    -> os.scandir    (import os)
+    -> part_a_file_type    (this file, line 384)
+    -> part_a_language    (this file, line 397)    x2
+    -> Path    (from pathlib import Path)    x2
+    -> Path(entry.path).resolve    (method or call on an expression)
+    -> record.setdefault    (local variable or parameter)    x2
+    -> repository_file_counts    (this file, line 368)
+    -> sorted    (builtin)    x2
+    -> str    (builtin)
+    -> x.name.casefold    (local variable or parameter)
+part_a_file_type()    384
+    -> Path    (from pathlib import Path)
+    -> Path(path).suffix.lower    (method or call on an expression)
+part_a_language()    397
+    -> matched.group    (local variable or parameter)
+    -> matched.group(1).lower    (method or call on an expression)
+    -> Path    (from pathlib import Path)
+    -> re.search    (import re)
+plan_uploads()    550
+    -> (project.get('publish_settings') or {})…    (method or call on an expression)
+    -> (source / 'output.json').is_file    (method or call on an expression)
+    -> candidates.append    (local variable or parameter)
+    -> file_title    (this file, line 197)
+    -> index_page.is_file    (local variable or parameter)
+    -> index_template    (this file, line 527)
+    -> Path    (from pathlib import Path)
+    -> Path(source).expanduser    (method or call on an expression)
+    -> plan.append    (local variable or parameter)
+    -> project.get    (local variable or parameter)
+    -> read_root_record    (this file, line 513)
+    -> read_token    (this file, line 536)
+publish_github_pages()    983
+    -> any    (builtin)
+    -> build_web_site    (this file, line 805)
+    -> datetime.now    (from datetime import datetime)
+    -> datetime.now().isoformat    (method or call on an expression)
+    -> git_env    (this file, line 912)
+    -> github_api    (this file, line 891)
+    -> log    (local variable or parameter)    x5
+    -> pages_url    (this file, line 887)
+    -> part_a_file_inventory    (this file, line 402)
+    -> Path    (from pathlib import Path)
+    -> Path(config['source_directory']).expand…    (method or call on an expression)
+    -> plan_uploads    (this file, line 550)
+    -> problems.append    (local variable or parameter)
+    -> push_repository    (this file, line 922)
+    -> record_progress    (this file, line 975)    x4
+    -> shutil.which    (import shutil)
+    -> str    (builtin)    x6
+    -> user.get    (local variable or parameter)    x3
+publish_source_file()    713
+    -> append_nav    (this file, line 706)    x2
+    -> body.group    (local variable or parameter)
+    -> dest.parent.mkdir    (local variable or parameter)
+    -> dest.write_text    (local variable or parameter)
+    -> file_title    (this file, line 197)    x2
+    -> html.escape    (import html)
+    -> html_page    (this file, line 699)
+    -> m.group    (unknown, not imported or defined here)
+    -> markdown_to_html    (this file, line 606)    x2
+    -> re.search    (import re)    x2
+    -> re.sub    (import re)
+    -> render_local_template    (this file, line 487)
+    -> rewrite_md_links    (this file, line 684)    x4
+    -> src.read_text    (local variable or parameter)
+    -> src.suffix.lower    (local variable or parameter)
+push_repository()    922
+    -> body.get    (local variable or parameter)    x3
+    -> candidate.is_file    (local variable or parameter)
+    -> candidate.resolve    (local variable or parameter)
+    -> candidate.unlink    (local variable or parameter)
+    -> dest.parent.mkdir    (local variable or parameter)
+    -> docs.mkdir    (local variable or parameter)
+    -> docs.resolve    (local variable or parameter)
+    -> folder.rglob    (local variable or parameter)    x2
+    -> github_api    (this file, line 891)    x4
+    -> json.dumps    (import json)
+    -> json.loads    (import json)
+    -> log    (local variable or parameter)    x3
+    -> manifest.exists    (local variable or parameter)
+    -> manifest.read_text    (local variable or parameter)
+    -> manifest.write_text    (local variable or parameter)
+    -> p.is_file    (local variable or parameter)
+    -> p.relative_to    (local variable or parameter)
+    -> p.relative_to(folder).as_posix    (method or call on an expression)
+    -> pages_url    (this file, line 887)
+    -> Path    (from pathlib import Path)
+    -> previous.get    (local variable or parameter)
+    -> run_cmd    (this file, line 874)    x7
+    -> RuntimeError    (builtin)    x3
+    -> shutil.copy2    (import shutil)
+    -> source_file.is_file    (local variable or parameter)
+    -> source_file.relative_to    (local variable or parameter)
+    -> str    (builtin)    x7
+    -> tempfile.TemporaryDirectory    (import tempfile)
+read_account_priv()    250
+    -> isinstance    (builtin)
+    -> json.loads    (import json)
+    -> Path    (from pathlib import Path)
+    -> Path(str(source)).expanduser    (method or call on an expression)
+    -> path.is_file    (local variable or parameter)
+    -> path.read_text    (local variable or parameter)
+    -> str    (builtin)    x2
+    -> str(source or '').strip    (method or call on an expression)
+read_root_record()    513
+    -> isinstance    (builtin)
+    -> json.loads    (import json)
+    -> Path    (from pathlib import Path)
+    -> Path(source).expanduser    (method or call on an expression)
+    -> path.is_file    (local variable or parameter)
+    -> path.read_text    (local variable or parameter)
+    -> str    (builtin)
+    -> str(source or '').strip    (method or call on an expression)
+read_token()    536
+    -> data.get    (local variable or parameter)
+    -> data.values    (local variable or parameter)
+    -> isinstance    (builtin)
+    -> len    (builtin)
+    -> read_account_priv    (this file, line 250)
+    -> str    (builtin)
+    -> str(data.get('github_token', '') or '')…    (method or call on an expression)
+    -> v.strip    (local variable or parameter)    x2
+record_progress()    975
+    -> log    (local variable or parameter)
+    -> str    (builtin)    x2
+    -> update_progress    (this file, line 304)
+render_index()    754
+    -> ''.join    (method or call on an expression)
+    -> block.end    (local variable or parameter)
+    -> block.group    (local variable or parameter)
+    -> block.start    (local variable or parameter)
+    -> cards.append    (local variable or parameter)
+    -> fill    (local variable or parameter)
+    -> html.escape    (import html)    x2
+    -> log    (local variable or parameter)
+    -> pages    (local variable or parameter)
+    -> quote    (from urllib.parse import quote)    x3
+    -> re.search    (import re)
+    -> re.sub    (import re)
+    fill()    764
+        -> text.replace    (local variable or parameter)
+        -> values.items    (local variable or parameter)
+    pages()    769
+        make()    770
+            -> ''.join    (method or call on an expression)
+            -> file_title    (this file, line 197)
+            -> fill    (unknown, not imported or defined here)
+            -> html.escape    (import html)
+            -> match.group    (local variable or parameter)
+            -> p.suffix.lower    (local variable or parameter)
+            -> quote    (from urllib.parse import quote)
+render_local_template()    487
+    -> contents.replace    (local variable or parameter)    x2
+    -> html.escape    (import html)
+    -> Path    (from pathlib import Path)
+    -> Path(template_file).read_text    (method or call on an expression)
+    -> Path(template_file).read_text(encoding=…    (method or call on an expression)
+    -> project.get    (local variable or parameter)    x8
+    -> str    (builtin)
+    -> values.items    (local variable or parameter)
+repo_name()    245
+    -> re.sub    (import re)
+    -> re.sub('[^A-Za-z0-9._-]+', '-', str(fol…    (method or call on an expression)
+    -> str    (builtin)
+repository_file_counts()    368
+    -> folder.iterdir    (local variable or parameter)
+    -> languages.add    (local variable or parameter)
+    -> len    (builtin)    x2
+    -> match.group    (local variable or parameter)
+    -> match.group(1).lower    (method or call on an expression)
+    -> p.is_file    (local variable or parameter)
+    -> p.suffix.lower    (local variable or parameter)    x4
+    -> Path    (from pathlib import Path)
+    -> re.search    (import re)
+    -> set    (builtin)
+    -> sum    (builtin)    x4
+rewrite_md_links()    684
+    -> re.sub    (import re)
+    change()    686
+        -> html.escape    (import html)
+        -> html.unescape    (import html)
+        -> m.group    (local variable or parameter)    x4
+        -> re.match    (import re)
+        -> re.sub    (import re)
+        -> url.startswith    (local variable or parameter)
+run_cmd()    874
+    -> ' '.join    (method or call on an expression)    x2
+    -> log    (local variable or parameter)    x2
+    -> map    (builtin)    x2
+    -> result.stdout.strip    (local variable or parameter)    x4
+    -> RuntimeError    (builtin)
+    -> str    (builtin)    x2
+    -> subprocess.run    (import subprocess)
+scan_articles()    574
+    -> (folder / name).is_file    (method or call on an expression)
+    -> articles.append    (local variable or parameter)
+    -> file_description    (this file, line 222)
+    -> file_title    (this file, line 197)
+    -> folder.iterdir    (local variable or parameter)
+    -> folder.name.startswith    (local variable or parameter)
+    -> len    (builtin)
+    -> load_uploads    (this file, line 312)
+    -> p.is_file    (local variable or parameter)
+    -> p.is_symlink    (local variable or parameter)
+    -> p.suffix.lower    (local variable or parameter)
+    -> Path    (from pathlib import Path)
+    -> Path(source).expanduser    (method or call on an expression)
+    -> project.get    (local variable or parameter)    x3
+    -> re.fullmatch    (import re)
+    -> repo_name    (this file, line 245)
+    -> select_asset    (this file, line 231)    x2
+    -> sorted    (builtin)
+    -> source.is_dir    (local variable or parameter)
+    -> str    (builtin)    x4
+    -> str(project.get('name') or '').strip    (method or call on an expression)
+    -> str(source or '').strip    (method or call on an expression)
+    -> x.name.casefold    (unknown, not imported or defined here)
+select_asset()    231
+    -> asset.is_file    (local variable or parameter)
+    -> asset.relative_to    (local variable or parameter)
+    -> asset.relative_to(folder).as_posix    (method or call on an expression)
+    -> base.is_dir    (local variable or parameter)
+    -> Path    (from pathlib import Path)
+set_publish_flag()    474
+    -> bool    (builtin)    x2
+    -> isinstance    (builtin)
+    -> json.loads    (import json)
+    -> Path    (from pathlib import Path)
+    -> path.read_text    (local variable or parameter)
+    -> path.with_name    (local variable or parameter)
+    -> record.setdefault    (local variable or parameter)
+    -> staged.replace    (local variable or parameter)
+    -> ValueError    (builtin)
+    -> write_json    (this file, line 267)
+set_repository_enabled()    345
+    -> active.is_file    (local variable or parameter)    x2
+    -> active.rename    (local variable or parameter)
+    -> FileExistsError    (builtin)
+    -> folder.is_dir    (local variable or parameter)
+    -> folder.is_symlink    (local variable or parameter)
+    -> inactive.exists    (local variable or parameter)
+    -> inactive.is_file    (local variable or parameter)    x2
+    -> inactive.rename    (local variable or parameter)
+    -> NotADirectoryError    (builtin)
+    -> Path    (from pathlib import Path)
+    -> str    (builtin)    x2
+    -> write_json    (this file, line 267)
+slugify()    262
+    -> re.sub    (import re)
+    -> slug.strip    (local variable or parameter)
+    -> str    (builtin)
+    -> str(s).lower    (method or call on an expression)
+    -> str(s).lower().replace    (method or call on an expression)
+update_progress()    304
+    -> datetime.now    (from datetime import datetime)
+    -> datetime.now().isoformat    (method or call on an expression)
+    -> int    (builtin)
+    -> progress.update    (local variable or parameter)
+    -> project.setdefault    (local variable or parameter)
+    -> str    (builtin)    x2
+    -> write_upload    (this file, line 291)
+valid_output_directory()    185
+    -> NotADirectoryError    (builtin)
+    -> Path    (from pathlib import Path)    x2
+    -> Path(output).expanduser    (method or call on an expression)
+    -> Path(output).expanduser().resolve    (method or call on an expression)
+    -> Path(source).expanduser    (method or call on an expression)
+    -> Path(source).expanduser().resolve    (method or call on an expression)
+    -> Path.home    (from pathlib import Path)
+    -> Path.home().resolve    (method or call on an expression)
+    -> source.is_dir    (local variable or parameter)
+    -> str    (builtin)
+    -> ValueError    (builtin)    x2
+write_json()    267
+    -> json.dumps    (import json)
+    -> Path    (from pathlib import Path)
+    -> path.parent.mkdir    (local variable or parameter)
+    -> path.write_text    (local variable or parameter)
+write_upload()    291
+    -> FileNotFoundError    (builtin)
+    -> Path    (from pathlib import Path)
+    -> path.is_file    (local variable or parameter)
+    -> path.with_name    (local variable or parameter)
+    -> project.get    (local variable or parameter)
+    -> staged.replace    (local variable or parameter)
+    -> str    (builtin)    x2
+    -> ValueError    (builtin)
+    -> write_json    (this file, line 267)
+class _QuietHandler    1034-1036
+    log_message()    1035
+class PublisherApp    1039-1444
+    __init__()    1040
+        -> load_state    (this file, line 175)
+        -> Path    (from pathlib import Path)
+        -> Path(__file__).resolve    (method or call on an expression)
+        -> queue.Queue    (import queue)
+        -> self._build_ui    (this class, line 1056)
+        -> self.after    (attribute of self (inherited or set at run time))
+        -> self.geometry    (attribute of self (inherited or set at run time))
+        -> self.minsize    (attribute of self (inherited or set at run time))
+        -> self.protocol    (attribute of self (inherited or set at run time))
+        -> self.refresh_articles    (this class, line 1242)
+        -> self.title    (attribute of self (inherited or set at run time))
+        -> super().__init__    (parent class)
+    _attach_notes()    1169
+        -> cpc_notes.attach    (import cpc_notes)
+        -> notes.configure    (local variable or parameter)
+        -> notes.insert    (local variable or parameter)
+        -> notes.pack    (local variable or parameter)
+        -> path.exists    (local variable or parameter)
+        -> path.read_text    (local variable or parameter)
+        -> scrolledtext.ScrolledText    (from tkinter import scrolledtext)
+        -> self.notebook.insert    (attribute of self (inherited or set at run time))
+        -> self.notebook.tabs    (attribute of self (inherited or set at run time))
+        -> ttk.Frame    (from tkinter import ttk)
+    _browse_config()    1184
+        -> filedialog.askdirectory    (from tkinter import filedialog)
+        -> filedialog.askopenfilename    (from tkinter import filedialog)
+        -> self.config_vars[key].set    (method or call on an expression)
+        -> self.load_account_fields    (this class, line 1211)
+    _build_config()    1133
+        -> enumerate    (builtin)
+        -> form.columnconfigure    (local variable or parameter)
+        -> form.pack    (local variable or parameter)
+        -> len    (builtin)
+        -> partial    (from functools import partial)
+        -> self.load_account_fields    (this class, line 1211)
+        -> self.state.get    (attribute of self (inherited or set at run time))
+        -> str    (builtin)    x2
+        -> tk.StringVar    (import tkinter as tk)    x3
+        -> ttk.Button    (from tkinter import ttk)    x3
+        -> ttk.Button(form, text='Browse', command…    (method or call on an expression)
+        -> ttk.Button(form, text='Get token', comm…    (method or call on an expression)
+        -> ttk.Button(tab, text='Save', command=se…    (method or call on an expression)
+        -> ttk.Entry    (from tkinter import ttk)    x2
+        -> ttk.Entry(form, textvariable=self.token…    (method or call on an expression)
+        -> ttk.Entry(form, textvariable=var).grid    (method or call on an expression)
+        -> ttk.Frame    (from tkinter import ttk)
+        -> ttk.Label    (from tkinter import ttk)    x4
+        -> ttk.Label(form, text='GitHub token (sav…    (method or call on an expression)
+        -> ttk.Label(form, text=caption).grid    (method or call on an expression)
+        -> ttk.Label(form, textvariable=self.accou…    (method or call on an expression)
+        -> ttk.Label(tab, text='Configuration file…    (method or call on an expression)
+    _build_github()    1121
+        -> bar.pack    (local variable or parameter)
+        -> self.refresh_github_label    (this class, line 1400)
+        -> tk.StringVar    (import tkinter as tk)
+        -> ttk.Button    (from tkinter import ttk)    x2
+        -> ttk.Button(bar, text='Open published we…    (method or call on an expression)
+        -> ttk.Button(bar, text='Upload to GitHub …    (method or call on an expression)
+        -> ttk.Frame    (from tkinter import ttk)
+        -> ttk.Label    (from tkinter import ttk)    x3
+        -> ttk.Label(tab, text='Publish catalogue …    (method or call on an expression)
+        -> ttk.Label(tab, text='Uploads the index …    (method or call on an expression)
+        -> ttk.Label(tab, textvariable=self.gh_lab…    (method or call on an expression)
+    _build_preview()    1104
+        -> (self.web_folder() / INDEX_REPOSITORY /…    (method or call on an expression)
+        -> bar.pack    (local variable or parameter)
+        -> link.bind    (local variable or parameter)
+        -> link.pack    (local variable or parameter)
+        -> self.test_web    (this class, line 1365)
+        -> self.web_folder    (this class, line 1239)    x2
+        -> str    (builtin)    x2
+        -> tk.StringVar    (import tkinter as tk)    x3
+        -> ttk.Button    (from tkinter import ttk)    x3
+        -> ttk.Button(bar, text='Build web and ope…    (method or call on an expression)
+        -> ttk.Button(bar, text='Open web folder',…    (method or call on an expression)
+        -> ttk.Button(bar, text='Preview local web…    (method or call on an expression)
+        -> ttk.Frame    (from tkinter import ttk)
+        -> ttk.Label    (from tkinter import ttk)    x4
+        -> ttk.Label(tab, text='Build web and open…    (method or call on an expression)
+        -> ttk.Label(tab, textvariable=self.previe…    (method or call on an expression)    x2
+    _build_sources()    1078
+        -> bar.pack    (local variable or parameter)
+        -> cc_treeviews.build_treeview    (import cc_treeviews)
+        -> cpc_treeviews.build_treeview    (import cpc_treeviews)
+        -> self.tree.column    (attribute of self (inherited or set at run time))
+        -> self.tree.heading    (attribute of self (inherited or set at run time))
+        -> self.tree.pack    (attribute of self (inherited or set at run time))
+        -> tk.StringVar    (import tkinter as tk)
+        -> ttk.Button    (from tkinter import ttk)    x4
+        -> ttk.Button(bar, text='Disable directory…    (method or call on an expression)
+        -> ttk.Button(bar, text='Enable directory'…    (method or call on an expression)
+        -> ttk.Button(bar, text='Publish on/off', …    (method or call on an expression)
+        -> ttk.Button(bar, text='Refresh', command…    (method or call on an expression)
+        -> ttk.Frame    (from tkinter import ttk)
+        -> ttk.Label    (from tkinter import ttk)    x3
+        -> ttk.Label(bar, text='Source directory (…    (method or call on an expression)
+        -> ttk.Label(bar, textvariable=self.source…    (method or call on an expression)
+        -> ttk.Label(tab, text='A directory is a r…    (method or call on an expression)
+        -> ttk.Treeview    (from tkinter import ttk)
+        -> zip    (builtin)
+    _build_ui()    1056
+        -> scrolledtext.ScrolledText    (from tkinter import scrolledtext)
+        -> self._attach_notes    (this class, line 1169)
+        -> self._build_config    (this class, line 1133)
+        -> self._build_github    (this class, line 1121)
+        -> self._build_preview    (this class, line 1104)
+        -> self._build_sources    (this class, line 1078)
+        -> self._build_ui_choices    (this class, line 1160)
+        -> self.log_box.pack    (attribute of self (inherited or set at run time))
+        -> self.notebook.add    (attribute of self (inherited or set at run time))
+        -> self.notebook.bind    (attribute of self (inherited or set at run time))
+        -> self.notebook.pack    (attribute of self (inherited or set at run time))
+        -> self.notebook.select    (attribute of self (inherited or set at run time))
+        -> tk.StringVar    (import tkinter as tk)
+        -> ttk.Frame    (from tkinter import ttk)
+        -> ttk.Label    (from tkinter import ttk)
+        -> ttk.Label(self, textvariable=self.statu…    (method or call on an expression)
+        -> ttk.Notebook    (from tkinter import ttk)
+    _build_ui_choices()    1160
+        -> cpc_ui_choices.attach    (import cpc_ui_choices)
+        -> ttk.Label    (from tkinter import ttk)
+        -> ttk.Label(self.tabs['UI Choices'], text…    (method or call on an expression)
+    build_web()    1355
+        -> dict    (builtin)
+        -> self.preview_status.set    (attribute of self (inherited or set at run time))
+        -> self.save_config_only    (this class, line 1191)
+        -> self.worker    (this class, line 1346)
+        operation()    1360
+            -> build_web_site    (this file, line 805)
+            -> len    (builtin)
+            -> self.events.put    (attribute of self (inherited or set at run time))
+    close_app()    1439
+        -> json.dumps    (import json)
+        -> self.destroy    (attribute of self (inherited or set at run time))
+        -> self.server.server_close    (attribute of self (inherited or set at run time))
+        -> self.server.shutdown    (attribute of self (inherited or set at run time))
+        -> self.state_file.write_text    (attribute of self (inherited or set at run time))
+    disable_selected()    1302
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> messagebox.showinfo    (from tkinter import messagebox)
+        -> self.log    (this class, line 1314)
+        -> self.refresh_articles    (this class, line 1242)
+        -> self.selected_directory    (this class, line 1268)
+        -> set_repository_enabled    (this file, line 345)
+        -> str    (builtin)
+    enable_selected()    1275
+        -> enable_directory    (this file, line 450)
+        -> folder.resolve    (local variable or parameter)
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> messagebox.showinfo    (from tkinter import messagebox)
+        -> Path    (from pathlib import Path)
+        -> Path(self.state['source_directory']).ex…    (method or call on an expression)    x2
+        -> self.log    (this class, line 1314)
+        -> self.refresh_articles    (this class, line 1242)
+        -> self.selected_directory    (this class, line 1268)
+        -> str    (builtin)
+    load_account_fields()    1211
+        -> read_root_record    (this file, line 513)
+        -> read_root_record(source).get    (method or call on an expression)
+        -> read_token    (this file, line 536)
+        -> self.account_status.set    (attribute of self (inherited or set at run time))
+        -> self.config_vars['source_directory'].get    (method or call on an expression)
+        -> self.config_vars['source_directory'].ge…    (method or call on an expression)
+        -> self.token_var.set    (attribute of self (inherited or set at run time))
+        -> str    (builtin)
+        -> str(read_root_record(source).get('owner…    (method or call on an expression)
+    log()    1314
+        -> self.events.put    (attribute of self (inherited or set at run time))
+        -> str    (builtin)
+    open_published()    1428
+        -> getattr    (builtin)
+        -> messagebox.showinfo    (from tkinter import messagebox)
+        -> webbrowser.open    (import webbrowser)
+    open_token_page()    1218
+        -> webbrowser.open    (import webbrowser)
+    open_web_folder()    1390
+        -> folder.as_uri    (local variable or parameter)
+        -> folder.is_dir    (local variable or parameter)
+        -> messagebox.showinfo    (from tkinter import messagebox)
+        -> os.startfile    (import os)
+        -> self.web_folder    (this class, line 1239)
+        -> str    (builtin)
+        -> webbrowser.open    (import webbrowser)
+    process_events()    1317
+        -> '\n'.join    (method or call on an expression)
+        -> getattr    (builtin)
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> messagebox.showinfo    (from tkinter import messagebox)
+        -> self.after    (attribute of self (inherited or set at run time))
+        -> self.events.get_nowait    (attribute of self (inherited or set at run time))
+        -> self.log_box.configure    (attribute of self (inherited or set at run time))    x2
+        -> self.log_box.insert    (attribute of self (inherited or set at run time))
+        -> self.log_box.see    (attribute of self (inherited or set at run time))
+        -> self.preview_label.set    (attribute of self (inherited or set at run time))
+        -> self.preview_status.set    (attribute of self (inherited or set at run time))    x2
+        -> self.refresh_articles    (this class, line 1242)
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> self.test_web    (this class, line 1365)
+        -> str    (builtin)    x4
+    refresh_articles()    1242
+        -> (article['folder'] / 'images').is_dir    (method or call on an expression)
+        -> (article['folder'] / 'images').rglob    (method or call on an expression)
+        -> (article['project'].get('progress') or …    (method or call on an expression)
+        -> (article['project'].get('publish_settin…    (method or call on an expression)
+        -> (record.get('progress') or {}).get    (method or call on an expression)
+        -> (record.get('publish_settings') or {}).…    (method or call on an expression)
+        -> (root / 'index.html').is_file    (method or call on an expression)
+        -> (root / 'output.json').is_file    (method or call on an expression)
+        -> (root / 'record.json').is_file    (method or call on an expression)
+        -> article['project'].get    (method or call on an expression)    x3
+        -> articles.get    (local variable or parameter)
+        -> len    (builtin)    x3
+        -> p.is_file    (local variable or parameter)
+        -> part_a_directories    (this file, line 426)
+        -> Path    (from pathlib import Path)    x2
+        -> Path(source).expanduser    (method or call on an expression)    x2
+        -> Path(source).expanduser().is_dir    (method or call on an expression)
+        -> read_root_record    (this file, line 513)
+        -> record.get    (local variable or parameter)    x4
+        -> scan_articles    (this file, line 574)
+        -> self.state.get    (attribute of self (inherited or set at run time))
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> self.tree.delete    (attribute of self (inherited or set at run time))
+        -> self.tree.get_children    (attribute of self (inherited or set at run time))
+        -> self.tree.insert    (attribute of self (inherited or set at run time))    x2
+        -> source.strip    (local variable or parameter)
+        -> str    (builtin)    x8
+        -> sum    (builtin)
+    refresh_github_label()    1400
+        -> read_root_record    (this file, line 513)
+        -> read_root_record(source).get    (method or call on an expression)
+        -> read_token    (this file, line 536)
+        -> self.gh_label.set    (attribute of self (inherited or set at run time))
+        -> self.state.get    (attribute of self (inherited or set at run time))
+        -> source.strip    (local variable or parameter)    x2
+        -> str    (builtin)    x2
+        -> str(read_root_record(source).get('owner…    (method or call on an expression)
+    save_account()    1221
+        -> json.dumps    (import json)
+        -> messagebox.showwarning    (from tkinter import messagebox)
+        -> os.chmod    (import os)
+        -> Path    (from pathlib import Path)
+        -> Path(raw).expanduser    (method or call on an expression)
+        -> path.write_text    (local variable or parameter)
+        -> read_account_priv    (this file, line 250)
+        -> self.config_vars['source_directory'].get    (method or call on an expression)
+        -> self.config_vars['source_directory'].ge…    (method or call on an expression)
+        -> self.load_account_fields    (this class, line 1211)
+        -> self.token_var.get    (attribute of self (inherited or set at run time))
+        -> self.token_var.get().strip    (method or call on an expression)
+        -> source.is_dir    (local variable or parameter)
+    save_config_only()    1191
+        -> int    (builtin)
+        -> json.dumps    (import json)
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> self.config_vars.items    (attribute of self (inherited or set at run time))
+        -> self.config_vars['server_port'].get    (method or call on an expression)
+        -> self.config_vars['server_port'].get().s…    (method or call on an expression)
+        -> self.preview_label.set    (attribute of self (inherited or set at run time))
+        -> self.preview_url.set    (attribute of self (inherited or set at run time))
+        -> self.refresh_articles    (this class, line 1242)
+        -> self.refresh_github_label    (this class, line 1400)
+        -> self.save_account    (this class, line 1221)
+        -> self.source_label.set    (attribute of self (inherited or set at run time))
+        -> self.state_file.write_text    (attribute of self (inherited or set at run time))
+        -> self.status_var.set    (attribute of self (inherited or set at run time))
+        -> self.web_folder    (this class, line 1239)
+        -> str    (builtin)    x4
+        -> ValueError    (builtin)
+        -> var.get    (local variable or parameter)
+        -> var.get().strip    (method or call on an expression)
+    selected_directory()    1268
+        -> Path    (from pathlib import Path)
+        -> Path(self.state['source_directory']).ex…    (method or call on an expression)
+        -> self.state.get    (attribute of self (inherited or set at run time))
+        -> self.tree.item    (attribute of self (inherited or set at run time))
+        -> self.tree.selection    (attribute of self (inherited or set at run time))
+        -> str    (builtin)    x2
+        -> str(self.state.get('source_directory', …    (method or call on an expression)
+        -> TV_ARTICLES['columns'].index    (method or call on an expression)
+    tab_changed()    1435
+        -> self.notebook.index    (attribute of self (inherited or set at run time))
+        -> self.notebook.select    (attribute of self (inherited or set at run time))
+        -> self.notebook.tab    (attribute of self (inherited or set at run time))
+    test_web()    1365
+        -> (folder / INDEX_REPOSITORY / 'index.htm…    (method or call on an expression)
+        -> http.server.ThreadingHTTPServer    (import http.server)
+        -> int    (builtin)
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> partial    (from functools import partial)
+        -> self.build_web    (this class, line 1355)
+        -> self.log    (this class, line 1314)
+        -> self.preview_status.set    (attribute of self (inherited or set at run time))
+        -> self.preview_url.set    (attribute of self (inherited or set at run time))
+        -> self.save_config_only    (this class, line 1191)
+        -> self.server.server_close    (attribute of self (inherited or set at run time))
+        -> self.server.shutdown    (attribute of self (inherited or set at run time))
+        -> self.server_thread.start    (attribute of self (inherited or set at run time))
+        -> self.web_folder    (this class, line 1239)
+        -> str    (builtin)    x3
+        -> threading.Thread    (import threading)
+        -> webbrowser.open    (import webbrowser)
+    toggle_publish_selected()    1288
+        -> (folder / 'output.json').read_text    (method or call on an expression)
+        -> (record.get('publish_settings') or {}).…    (method or call on an expression)
+        -> bool    (builtin)
+        -> folder.resolve    (local variable or parameter)
+        -> isinstance    (builtin)
+        -> json.loads    (import json)
+        -> messagebox.showerror    (from tkinter import messagebox)
+        -> messagebox.showinfo    (from tkinter import messagebox)
+        -> Path    (from pathlib import Path)
+        -> Path(self.state['source_directory']).ex…    (method or call on an expression)    x2
+        -> record.get    (local variable or parameter)
+        -> self.log    (this class, line 1314)
+        -> self.refresh_articles    (this class, line 1242)
+        -> self.selected_directory    (this class, line 1268)
+        -> set_publish_flag    (this file, line 474)
+        -> str    (builtin)
+    upload_github()    1406
+        -> '\n'.join    (method or call on an expression)    x3
+        -> cfg.get    (local variable or parameter)
+        -> dict    (builtin)
+        -> messagebox.askyesno    (from tkinter import messagebox)
+        -> messagebox.showwarning    (from tkinter import messagebox)
+        -> plan_uploads    (this file, line 550)
+        -> read_root_record    (this file, line 513)
+        -> read_root_record(source).get    (method or call on an expression)
+        -> scan_articles    (this file, line 574)
+        -> self.build_web    (this class, line 1355)
+        -> self.worker    (this class, line 1346)
+        -> source.strip    (local variable or parameter)
+        -> str    (builtin)    x2
+        -> str(read_root_record(source).get('owner…    (method or call on an expression)
+        operation()    1423
+            -> publish_github_pages    (this file, line 983)
+            -> self.events.put    (attribute of self (inherited or set at run time))
+    web_folder()    1239
+        -> Path    (from pathlib import Path)
+        -> Path(self.state['web_directory'] or sel…    (method or call on an expression)    x2
+    worker()    1346
+        -> threading.Thread    (import threading)
+        -> threading.Thread(target=run, daemon=Tru…    (method or call on an expression)
+        run()    1347
+            -> self.events.put    (attribute of self (inherited or set at run time))
+            -> self.log    (this class, line 1314)
+            -> str    (builtin)    x2
+            -> task    (unknown, not imported or defined here)
+(module level)
+    -> Path    (from pathlib import Path)
+    -> Path(__file__).resolve    (method or call on an expression)
+    -> PublisherApp    (this file, line 1039)
+    -> PublisherApp().mainloop    (method or call on an expression)
+    -> str    (builtin)    x2
+    -> sys.path.insert    (import sys)

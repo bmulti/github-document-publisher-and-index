@@ -1,0 +1,71 @@
+Python Code Depth Lifter 4.7
+Dissect a python file
+project: Python
+
+Folders in use
+    Settings   \\192.168.1.10\shared\cc_lib\_pub\cpc_depth_lifter\cc_depth_lifter.json
+    Reports    X:\cc_lib\_pub\cpc_gitpub_doc_publisher\depth_lifter_reports
+    Backups    \\192.168.1.10\shared\cc_lib\_pub\cpc_depth_lifter\backups
+    Crash log  \\192.168.1.10\shared\cc_lib\_pub\cpc_depth_lifter\depth_lifter.log
+
+File        cpc_github_doc_publisher_old.py
+Modified    2026-11-20 10:25:38
+Encoding    UTF-8
+Line ends   CRLF (Windows)
+
+Cautions
+    Caution 7 of 24 imports do not name the source file at the call: from functools import partial, from pathlib import Path, from urllib.parse import quote, from tkinter import filedialog, from tkinter import messagebox, from tkinter import scrolledtext ...
+
+Statistics
+    Lines                         820   (code 735, comments 8, blank 77)
+    Classes                       2
+    Functions and methods         52   (module level 19, methods 24, nested 9, async 0)
+    Deepest nesting               2
+    Function length (lines)       average 12.8   median 8   shortest 2 (build_web)   longest 76 (markdown_to_html)
+    Longest functions             markdown_to_html 76, build_web_site 61, publish_github_pages 58, scan_articles 24, render_catalogue 23
+    Over 50 lines                 3   (markdown_to_html, build_web_site, publish_github_pages)
+    Parameters per function       average 1.0   most 4 (run_cmd)
+    With a docstring              6 of 52   (11%)   module docstring: yes
+    With a return type            0 of 52   (0%)
+    Decorated                     0
+    Variables                     module 13, class 0, self attributes 16, in functions 156
+    Call sites                    580   (297 distinct callees)
+
+Imports
+    24 imports: 17 by module or alias, 7 by bare name, 0 star
+    The source file is named at the call for 70% of them
+
+Named by module or alias (good: a call reads os.path.join or np.array, so the source shows)
+    import html                                    standard library               line 76    used 21x
+    import http.server                             standard library               line 77    used 2x
+    import json                                    standard library               line 78    used 5x
+    import os                                      standard library               line 79    used 5x
+    import queue                                   standard library               line 80    used 2x
+    import re                                      standard library               line 81    used 38x
+    import shutil                                  standard library               line 82    used 7x
+    import subprocess                              standard library               line 83    used 5x
+    import sys                                     standard library               line 84    used 2x
+    import tempfile                                standard library               line 85    used 2x
+    import threading                               standard library               line 86    used 2x
+    import webbrowser                              standard library               line 87    used 3x
+    import tkinter as tk                           standard library               line 96    used 6x
+    import cpc_treeviews                           third party or your own file   line 604   used 1x
+    import cc_treeviews                            third party or your own file   line 608   used 1x
+    import cpc_ui_choices                          third party or your own file   line 667   used 1x
+    import cpc_notes                               third party or your own file   line 676   used 1x
+
+Bare names (a call reads Path(...) and does not say it came from pathlib;
+prefer: import pathlib, then pathlib.Path(...), or import pathlib as pl)
+    from functools import partial                  standard library               line 88    used 2x
+    from pathlib import Path                       standard library               line 89    used 18x
+    from urllib.parse import quote                 standard library               line 90    used 6x
+    from tkinter import filedialog                 standard library               line 97    used 2x
+    from tkinter import messagebox                 standard library               line 97    used 7x
+    from tkinter import scrolledtext               standard library               line 97    used 2x
+    from tkinter import ttk                        standard library               line 97    used 28x
+
+Star imports (names cannot be traced to a file)
+    none
+
+Imported but never used (may be re-exported)
+    none

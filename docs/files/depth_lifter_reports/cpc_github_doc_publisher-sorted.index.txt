@@ -1,0 +1,97 @@
+source_file = cpc_github_doc_publisher.py
+source_modified = 2026-11-20 09:41:56
+name(parameters) -> return  [decorators]    first line   (classes: first-last)
+
+append_nav(content, nav)    707
+article_nav(slug, extras)    695
+build_web_site(config, log=print)    806
+copy_article_files(folder, dest, report)    737
+copy_index_files(source, dest)    787
+default_project(name='New Application')    274
+default_state()    167
+enable_directory(folder, repo=None)    451
+file_description(path)    223
+file_title(path)    198
+git_env(token, login, user_id)    913
+github_api(token, method, path, data=None)    892
+html_page(title, content, root='..', icon='')    700
+index_template(source, log=print)    528
+is_repository_candidate(folder)    421
+load_state(path)    176
+load_uploads(root)    313
+markdown_to_html(text)    607
+    flush()    634
+    inline(value)    613
+        code(m)    616
+        link(m)    623
+        picture(m)    620
+    safe(url)    609
+page_template(project, source, log=print)    500
+pages_url(owner, repository)    888
+part_a_directories(root)    427
+part_a_file_inventory(folder, record)    403
+part_a_file_type(path)    385
+part_a_language(path)    398
+plan_uploads(source, articles)    551
+publish_github_pages(config, log=print)    984
+publish_source_file(src, dest, nav, icon='', root='.', template=None, project=None)    714
+push_repository(owner, repo, title, folder, token, env, is_org, log)    923
+read_account_priv(source)    251
+read_root_record(source)    514
+read_token(source)    537
+record_progress(folder, project, status, stage, percent, message='', error='', log=print)    976
+render_index(template, articles, log=print)    755
+    fill(text, values)    765
+    pages(article, base)    770
+        make(match)    771
+render_local_template(project, template_file, content='', title='')    488
+repo_name(folder_name)    246
+repository_file_counts(folder)    369
+rewrite_md_links(markup)    685
+    change(m)    687
+run_cmd(args, cwd=None, log=print, timeout=180, env=None)    875
+scan_articles(source)    575
+select_asset(folder, stem)    232
+set_publish_flag(folder, value)    475
+set_repository_enabled(folder, enabled)    346
+slugify(s)    263
+update_progress(folder, project, status, stage, percent, message='', error='')    305
+valid_output_directory(source, output)    186
+write_json(path, obj)    268
+write_upload(folder, project)    292
+class _QuietHandler(http.server.SimpleHTTPRequestHandler)    1035-1037
+    log_message(self, format, *args)    1036
+class PublisherApp(tk.Tk)    1040-1445
+    __init__(self)    1041
+    _attach_notes(self)    1057
+    _browse_config(self, key, kind)    1072
+    _build_config(self)    1079
+    _build_github(self)    1106
+    _build_preview(self)    1118
+    _build_sources(self)    1135
+    _build_ui(self)    1161
+    _build_ui_choices(self)    1183
+    build_web(self)    1192
+        operation()    1197
+    close_app(self)    1202
+    disable_selected(self)    1209
+    enable_selected(self)    1221
+    load_account_fields(self)    1234
+    log(self, message)    1241
+    open_published(self)    1244
+    open_token_page(self)    1251
+    open_web_folder(self)    1254
+    process_events(self)    1264
+    refresh_articles(self)    1293
+    refresh_github_label(self)    1319
+    save_account(self)    1325
+    save_config_only(self)    1343
+    selected_directory(self)    1363
+    tab_changed(self, event=None)    1370
+    test_web(self)    1374
+    toggle_publish_selected(self)    1399
+    upload_github(self)    1413
+        operation()    1430
+    web_folder(self)    1435
+    worker(self, task)    1438
+        run()    1439

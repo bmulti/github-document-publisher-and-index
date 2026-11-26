@@ -1,0 +1,58 @@
+source_file = cpc_github_doc_publisher_old.py
+source_modified = 2026-11-20 10:25:38
+name(parameters) -> return  [decorators]    first line   (classes: first-last)
+
+append_nav(content, nav)    346
+article_nav(slug, extras)    333
+build_web_site(config, log=print)    412
+copy_article_files(folder, dest, report)    369
+default_state()    140
+file_description(path)    196
+file_title(path)    171
+html_page(title, content, root='..', icon='')    338
+load_state(path)    149
+markdown_to_html(text)    245
+    flush()    272
+    inline(value)    251
+        code(m)    254
+        link(m)    261
+        picture(m)    258
+    safe(url)    247
+pages_url(owner, repository)    487
+publish_github_pages(config, log=print)    491
+publish_source_file(src, dest, nav, icon='')    353
+render_catalogue(articles, config, site_icon='', site_splash='')    387
+rewrite_md_links(markup)    323
+    change(m)    325
+run_cmd(args, cwd=None, log=print, timeout=180)    475
+scan_articles(source)    219
+select_asset(folder, stem)    205
+valid_output_directory(source, output)    159
+class _QuietHandler(http.server.SimpleHTTPRequestHandler)    551-553
+    log_message(self, format, *args)    552
+class PublisherApp(tk.Tk)    556-816
+    __init__(self)    557
+    _attach_notes(self)    674
+    _browse_config(self, key, kind)    689
+    _build_config(self)    641
+    _build_github(self)    629
+    _build_preview(self)    618
+    _build_sources(self)    595
+    _build_ui(self)    573
+    _build_ui_choices(self)    665
+    build_web(self)    752
+    close_app(self)    811
+    log(self, message)    722
+    open_published(self)    802
+    open_web_folder(self)    775
+    process_events(self)    725
+    refresh_articles(self)    713
+    refresh_github_label(self)    782
+    save_config_only(self)    694
+    tab_changed(self, event=None)    807
+    test_web(self)    755
+    upload_github(self)    786
+        operation()    797
+    web_folder(self)    710
+    worker(self, task)    743
+        run()    744

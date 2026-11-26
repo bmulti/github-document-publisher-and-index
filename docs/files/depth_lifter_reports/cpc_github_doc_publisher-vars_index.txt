@@ -1,0 +1,403 @@
+source_file = cpc_github_doc_publisher.py
+source_modified = 2026-11-20 09:41:56
+name: annotation = value    line numbers   (functions: name() with their variables indented; classes: first-last)
+
+ACCOUNT_PRIV = 'account.priv'    147
+CONFIG_FILE = 'github_document_publisher.json'    146
+description = 'Move files to GitHub and Index'    135
+IMAGE_EXTENSIONS = ('.webp', '.png', '.jpg', '.jpeg', '.gif', '.svg'…    164
+INDEX_REPOSITORY = 'index'    148
+named = 'GitHub Document Publisher and Index'    132
+NOTES_KEY = 'cpc_github_publisher'    149
+project = 'Python'    134
+PUBLISH_EXTENSIONS = {'.html', '.htm', '.md', '.css', '.js', '.png', '…    151
+shared_path = Path(__file__).resolve().parent.parent    138
+SKIP_DIRS = {'.git', '.venv', 'venv', '__pycache__', 'node_mo…    150
+TV_ARTICLES = {'title': 'Document article folders', 'columns': …    156
+UPLOAD_REASONS = {'off': 'publish is off', 'no-record': 'no output…    546
+version = '11'    133
+VERSION = '1.0.1'    145
+append_nav()
+    match
+article_nav()
+    entries
+build_web_site()
+    article
+    articles
+    built
+    dest
+    index_dir
+    index_page
+    nav
+    output
+    page
+    raw_source
+    relative_icon
+    report
+    source
+    stage
+    target
+    temp
+    template
+    tpl
+    used
+    webdir
+copy_article_files()
+    base
+    dirs
+    name
+    names
+    rel
+    src
+    target
+copy_index_files()
+    allowed
+    base
+    dirs
+    extension
+    here
+    name
+    names
+    path
+    source
+    target
+default_project()
+    ident
+enable_directory()
+    folder
+    loaded
+    main
+    path
+    project
+file_description()
+    content
+    match
+file_title()
+    candidate
+    content
+    match
+    path
+git_env()
+    basic
+    email
+github_api()
+    raw
+    request
+    response
+    status
+html_page()
+    favicon
+index_template()
+    chosen
+    page
+is_repository_candidate()
+    folder
+load_state()
+    loaded
+    result
+load_uploads()
+    folder
+    loaded
+    path
+    project
+    result
+    root
+markdown_to_html()
+    blocks
+    bullet
+    code_lines
+    h
+    heading
+    line
+    list_items
+    list_tag
+    number
+    paragraph
+    raw
+    tag
+    flush()
+        list_tag
+    inline()
+        tokens
+        value
+        link()
+            src
+        picture()
+            src
+    safe()
+        url
+page_template()
+    name
+    path
+    settings
+part_a_directories()
+    entry
+    folder
+    output
+    page
+    record
+    result
+    root
+part_a_file_inventory()
+    entry
+    files
+    folder
+    path
+part_a_file_type()
+    ext
+part_a_language()
+    matched
+plan_uploads()
+    action
+    candidates
+    folder
+    has_record
+    index_page
+    plan
+    project
+    repo
+    source
+    title
+    token
+publish_github_pages()
+    articles
+    env
+    files
+    folder
+    index_url
+    item
+    local
+    login
+    message
+    plan
+    problems
+    project
+    repo
+    source
+    status
+    todo
+    token
+    uploaded
+    user
+publish_source_file()
+    body
+    content
+    favicon
+    is_md
+    raw
+    rendered
+push_repository()
+    _
+    body
+    branch
+    candidate
+    checkout
+    dest
+    docs
+    endpoint
+    exists
+    manifest
+    previous
+    published_files
+    rel
+    remote
+    source_file
+    status
+    temp
+read_account_priv()
+    data
+    path
+read_root_record()
+    loaded
+    path
+read_token()
+    data
+    token
+    values
+render_index()
+    article
+    base
+    block
+    cards
+    inner
+    fill()
+        key
+        text
+        value
+render_local_template()
+    contents
+    key
+    value
+    values
+repository_file_counts()
+    files
+    folder
+    item
+    languages
+    match
+rewrite_md_links()
+    change()
+        url
+run_cmd()
+    result
+scan_articles()
+    articles
+    extras
+    folder
+    mains
+    name
+    project
+    repo
+    source
+select_asset()
+    asset
+    base
+    extension
+    folder
+    name
+    stems
+set_publish_flag()
+    path
+    record
+    staged
+set_repository_enabled()
+    active
+    folder
+    inactive
+slugify()
+    slug
+update_progress()
+    progress
+valid_output_directory()
+    output
+    source
+write_json()
+    path
+write_upload()
+    path
+    staged
+class PublisherApp    1039-1444
+    self.account_status = tk.StringVar()    1156
+    self.config_vars = {}    1140
+    self.events = queue.Queue()    1045
+    self.gh_label = tk.StringVar()    1124
+    self.last_index_url = value[0] or getattr(self, 'last_index_url', '')    1336
+    self.log_box = scrolledtext.ScrolledText(self.tabs['Log'], state…    1069
+    self.notebook = ttk.Notebook(self)    1057
+    self.preview_label = tk.StringVar(value='Generated website: ' + str(se…    1111
+    self.preview_status = tk.StringVar(value='No local website has been gen…    1117
+    self.preview_url = tk.StringVar(value='Local preview: http://127.0.0…    1113
+    self.refresh_notes = cpc_notes.attach(self.notebook, NOTES_KEY, self.s…    1172
+    self.script_dir = Path(__file__).resolve().parent    1042
+    self.server = None    1046, 1376, 1379
+    self.server_thread = None    1047, 1380
+    self.source_label = tk.StringVar(value=self.state['source_directory'])    1083
+    self.state = load_state(self.state_file)    1044
+    self.state_file = self.script_dir / CONFIG_FILE    1043
+    self.status_var = tk.StringVar(value='Article folders are discovere…    1071
+    self.tabs = {}    1059
+    self.token_var = tk.StringVar()    1153
+    self.tree = cpc_treeviews.build_treeview(tab, TV_ARTICLES, ow…    1091, 1095, 1097
+    _attach_notes()
+        frame
+        notes
+        path
+    _browse_config()
+        result
+    _build_config()
+        browse
+        caption
+        form
+        index
+        key
+        labels
+        row
+        tab
+        var
+    _build_github()
+        bar
+        tab
+    _build_preview()
+        bar
+        link
+        tab
+    _build_sources()
+        bar
+        column
+        label
+        tab
+        width
+    _build_ui()
+        frame
+        title
+    build_web()
+        snapshot
+        operation()
+            articles
+            location
+    disable_selected()
+        folder
+    enable_selected()
+        folder
+        is_root
+    load_account_fields()
+        owner
+        source
+    open_published()
+        url
+    open_web_folder()
+        folder
+    process_events()
+        count
+        event
+        location
+        text
+        value
+    refresh_articles()
+        article
+        articles
+        images
+        record
+        root
+        row
+        rows
+        source
+        state
+        values
+    refresh_github_label()
+        owner
+        source
+    save_account()
+        data
+        path
+        raw
+        source
+        token
+    save_config_only()
+        key
+        port
+        var
+    selected_directory()
+        selection
+        values
+    tab_changed()
+        idx
+    test_web()
+        folder
+        handler
+        port
+        url
+    toggle_publish_selected()
+        folder
+        now
+        record
+    upload_github()
+        cfg
+        go
+        owner
+        plan
+        skipped
+        source
+        text
+        operation()
+            result

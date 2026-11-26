@@ -1,0 +1,230 @@
+source_file = cpc_github_doc_publisher_old.py
+source_modified = 2026-11-20 10:25:38
+name: annotation = value    line numbers   (functions: name() with their variables indented; classes: first-last)
+
+CONFIG_FILE = 'github_document_publisher.json'    100
+CSS = "\n:root{--paper:#fffaf1;--ink:#172733;--muted:#5…    118
+description = 'Publish Github Documents Indexed'    7
+IMAGE_EXTENSIONS = ('.webp', '.png', '.jpg', '.jpeg', '.gif', '.svg'…    116
+named = 'GitPub Docs'    10
+NOTES_KEY = 'cpc_github_publisher'    101
+project = 'Site'    8
+PUBLISH_EXTENSIONS = {'.html', '.htm', '.md', '.css', '.js', '.png', '…    103
+shared_path = 'x:\\cc_lib'    92
+SKIP_DIRS = {'.git', '.venv', 'venv', '__pycache__', 'node_mo…    102
+TV_ARTICLES = {'title': 'Document article folders', 'columns': …    108
+version = '2.1'    9
+VERSION = '1.0.0'    99
+append_nav()
+    match
+article_nav()
+    entries
+build_web_site()
+    article
+    articles
+    dest
+    filename
+    label
+    nav
+    output
+    page
+    raw_source
+    relative_icon
+    report
+    site_assets
+    source
+    src
+    stage
+    target
+    temp
+    webdir
+copy_article_files()
+    base
+    dirs
+    name
+    names
+    rel
+    src
+    target
+file_description()
+    content
+    match
+file_title()
+    candidate
+    content
+    match
+    path
+html_page()
+    favicon
+    stylesheet
+load_state()
+    loaded
+    result
+markdown_to_html()
+    blocks
+    bullet
+    code_lines
+    h
+    heading
+    line
+    list_items
+    list_tag
+    number
+    paragraph
+    raw
+    tag
+    flush()
+        list_tag
+    inline()
+        tokens
+        value
+        link()
+            src
+        picture()
+            src
+    safe()
+        url
+publish_github_pages()
+    action
+    articles
+    branch
+    candidate
+    checkout
+    dest
+    docs
+    endpoint
+    local
+    login
+    manifest
+    owner
+    previous
+    probe
+    published_files
+    rel
+    remote
+    repo
+    result
+    source_file
+    status
+    temp
+    url
+    wanted
+publish_source_file()
+    favicon
+    nav_css
+    raw
+    rendered
+render_catalogue()
+    article
+    cards
+    extras
+    icon
+    icon_tag
+    image
+    image_tag
+    logo
+    slug
+    splash
+    subtitle
+    tiny_icon
+    title
+rewrite_md_links()
+    change()
+        url
+run_cmd()
+    result
+scan_articles()
+    articles
+    extras
+    folder
+    mains
+    source
+select_asset()
+    asset
+    base
+    extension
+    folder
+    name
+    stems
+valid_output_directory()
+    output
+    source
+class PublisherApp    556-816
+    self.config_vars = {}    647
+    self.events = queue.Queue()    562
+    self.gh_label = tk.StringVar()    632
+    self.log_box = scrolledtext.ScrolledText(self.tabs['Log'], state…    586
+    self.notebook = ttk.Notebook(self)    574
+    self.preview_label = tk.StringVar(value='Generated website: ' + str(se…    625
+    self.refresh_notes = cpc_notes.attach(self.notebook, NOTES_KEY, self.s…    677
+    self.script_dir = Path(__file__).resolve().parent    559
+    self.server = None    563, 764, 767
+    self.server_thread = None    564, 768
+    self.source_label = tk.StringVar(value=self.state['source_directory'])    600
+    self.state = load_state(self.state_file)    561
+    self.state_file = self.script_dir / CONFIG_FILE    560
+    self.status_var = tk.StringVar(value='Article folders are discovere…    588
+    self.tabs = {}    576
+    self.tree = cpc_treeviews.build_treeview(tab, TV_ARTICLES, ow…    605, 609, 611
+    _attach_notes()
+        frame
+        notes
+        path
+    _browse_config()
+        result
+    _build_config()
+        browse
+        caption
+        form
+        index
+        key
+        labels
+        tab
+        var
+    _build_github()
+        bar
+        tab
+    _build_preview()
+        bar
+        tab
+    _build_sources()
+        bar
+        column
+        label
+        tab
+        width
+    _build_ui()
+        frame
+        title
+    open_published()
+        owner
+        repo
+    open_web_folder()
+        folder
+    process_events()
+        event
+        value
+    refresh_articles()
+        article
+        articles
+        images
+    refresh_github_label()
+        owner
+        repo
+    save_config_only()
+        key
+        port
+        var
+    tab_changed()
+        idx
+    test_web()
+        folder
+        handler
+        port
+    upload_github()
+        owner
+        repo
+        snapshot
+        text
+        operation()
+            result
